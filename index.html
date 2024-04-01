@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        333: '#15CBDC'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<!-- 
+    sm  :640px
+    md	:768px
+    lg 	:1024px
+    xl  :1280px
+ -->
+
+<body>
+    <div class="travel mt-12">
+        <div class="font-semibold text-center mb-6 lg:text-4xl md:text-3xl sm:text-2xl">Live anywhere</div>
+        <div class="text-center text-1xl text-gray-500 mb-12">Keep calm & travel on</div>
+        <div class="
+        grid lg:grid-cols-3 grid-cols-1 lg:gap-x-8 gap-y-7 lg:gap-y-0 max-w-7xl mx-auto  px-[15px]
+        ">
+            <div class="h-100">
+                <div class="mb-5">
+                    <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt=""
+                        class="w-full h-96 object-cover rounded-lg ">
+                </div>
+                <h3 class="text-333 font-medium text-lg mb-3 text-center">Enjoy the great cold</h3>
+                <span class="block text-gray-500 text-center text-sm">6,7789 properties</span>
+            </div>
+            <div class="h-100">
+                <div class="mb-5">
+                    <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt=""
+                        class="w-full h-96 object-cover rounded-lg ">
+                </div>
+                <h3 class="text-black font-medium text-lg mb-3 text-center">Enjoy the great cold</h3>
+                <span class="block text-gray-500 text-center text-sm">6,7789 properties</span>
+            </div>
+            <div class="h-100">
+                <div class="mb-5">
+                    <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt=""
+                        class="w-full h-96 object-cover rounded-lg ">
+                </div>
+                <h3 class="text-black font-medium text-lg mb-3 text-center">Enjoy the great cold</h3>
+                <span class="block text-gray-500 text-center text-sm">6,7789 properties</span>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-5">
+        <button class="px-10 py-5 bg-[#ccc] hover:text-white hover:bg-black hover:scale-x-110">Confirm</button>
+        <input type="text" class="px-10 py-5 border border-red-500 focus:border-violet-500 outline-none">
+    </div>
+
+</body>
+
+</html>
