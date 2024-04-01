@@ -5,10 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .darkmode-input:checked+div {
+            background-color: #0F0D85;
+        }
+
+        .darkmode-input:checked+div .darkmode-spinner {
+            transform: translateX(60px);
+        }
+    </style>
+    <link rel="stylesheet" href="css/taillwind.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            theme: {
+            darkMode: 'class'
+            , theme: {
                 extend: {
                     colors: {
                         333: '#15CBDC'
@@ -17,6 +28,7 @@
             }
         }
     </script>
+
 </head>
 
 <!-- 
@@ -27,43 +39,48 @@
  -->
 
 <body>
-    <div class="travel mt-12">
-        <div class="font-semibold text-center mb-6 lg:text-4xl md:text-3xl sm:text-2xl">Live anywhere</div>
-        <div class="text-center text-1xl text-gray-500 mb-12">Keep calm & travel on</div>
-        <div class="
-        grid lg:grid-cols-3 grid-cols-1 lg:gap-x-8 gap-y-7 lg:gap-y-0 max-w-7xl mx-auto  px-[15px]
-        ">
-            <div class="h-100">
-                <div class="mb-5">
-                    <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt=""
-                        class="w-full h-96 object-cover rounded-lg ">
-                </div>
-                <h3 class="text-333 font-medium text-lg mb-3 text-center">Enjoy the great cold</h3>
-                <span class="block text-gray-500 text-center text-sm">6,7789 properties</span>
-            </div>
-            <div class="h-100">
-                <div class="mb-5">
-                    <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt=""
-                        class="w-full h-96 object-cover rounded-lg ">
-                </div>
-                <h3 class="text-black font-medium text-lg mb-3 text-center">Enjoy the great cold</h3>
-                <span class="block text-gray-500 text-center text-sm">6,7789 properties</span>
-            </div>
-            <div class="h-100">
-                <div class="mb-5">
-                    <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt=""
-                        class="w-full h-96 object-cover rounded-lg ">
-                </div>
-                <h3 class="text-black font-medium text-lg mb-3 text-center">Enjoy the great cold</h3>
-                <span class="block text-gray-500 text-center text-sm">6,7789 properties</span>
-            </div>
+    <label for="toggle" class="inline-block  cursor-pointer toggle-switch">
+        <input type="checkbox" name="" id="toggle" class="hidden darkmode-input">
+        <div class="w-[100px] h-[40px] border border-[#ccc] rounded-full fixed right-5 bottom-5 z-50 p-[5px] ">
+            <div class="w-7 h-7 bg-[#ccc] rounded-full transition-all darkmode-spinner"></div>
+        </div>
+    </label>
+    <div class="product-items max-w-[1100px] mx-auto grid grid-cols-4 gap-x-5 p-5">
+        <div class="px-5 py-8 rounded-xl border border-[#ccc] bg-white dark:bg-[#0F0D85]">
+            <img src="data:image/jpeg;base64,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"
+                alt="" class="mb-5 max-w-[100px] mx-auto">
+            <h3 class="text-lg font-semibold leading-normal text-center text-[#0F0D85] dark:text-white">
+                Recommentsdation</h3>
+            <div class="text-sm opacity-70 text-justify dark:text-white">Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Quia
+                quas iusto
+                soluta eum
+                reiciendis delectus dolore modi voluptates excepturi accusamus. Eum fugiat aliquam beatae omnis quod
+                explicabo quo. Eligendi, provident?</div>
         </div>
     </div>
-    <div class="text-center mt-5">
-        <button class="px-10 py-5 bg-[#ccc] hover:text-white hover:bg-black hover:scale-x-110">Confirm</button>
-        <input type="text" class="px-10 py-5 border border-red-500 focus:border-violet-500 outline-none">
-    </div>
-
+    <script>
+        const toggleSwitch = document.querySelector(
+            '.toggle-switch input[type="checkbox"]'
+        );
+        const currentTheme = localStorage.getItem("theme");
+        if (currentTheme) {
+            document.documentElement.setAttribute("class", currentTheme);
+            if (currentTheme === "dark") {
+                toggleSwitch.checked = true;
+            }
+        }
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute("class", "dark");
+                localStorage.setItem("theme", "dark");
+            } else {
+                document.documentElement.setAttribute("class", "light");
+                localStorage.setItem("theme", "light");
+            }
+        }
+        toggleSwitch.addEventListener("change", switchTheme);
+    </script>
 </body>
 
 </html>
